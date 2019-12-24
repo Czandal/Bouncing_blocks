@@ -6,6 +6,7 @@ int main(int argc, char*argv[])
 	std::cin >> m1;
 	std::cin >> m2;
 	init();
+	SDL_Rect counter_pos = { 700,25,100,30};
 	Block left(150.0, 700.0,m1, m1, 0.0,m1);
 	left.r.y -= left.r.h;
 	Block right(200.0+ left.r.h, 700.0,m2, m2, -10.0,m2);
@@ -169,12 +170,26 @@ int main(int argc, char*argv[])
 			SDL_SetRenderDrawColor(render, 0xff, 0xff, 0xff, 0xff);
 			SDL_RenderDrawLine(render,100,0,100,700);
 			SDL_RenderDrawLine(render,800,700,100,700);
+			if (counter_texture != nullptr)
+			{
+				SDL_DestroyTexture(counter_texture);
+			}
+			/*if (font != nullptr)
+			{
+				counter_texture = renderText(std::to_string(counter), 0xff, 0xff, 0xff);
+			}
+			else
+			{
+				font = TTF_OpenFont("arial.ttf", 30);
+				
+			}*/
+			counter_texture = renderText(std::to_string(counter), 0xff, 0xff, 0xff);
+			SDL_RenderCopy(render, counter_texture, nullptr, &counter_pos);
 			SDL_RenderPresent(render);
 		}
 		SDL_framerateDelay(&fps);
 	}
-	std::cout << counter;
-	std::cout << "\nWhile the expected number is equal to: " << floor(M_PI / atan(sqrt(m2 / m1))) - 1;
+	std::cout <<"Numver of collisions: "<< counter;
 	free();
 	return 0;
 }

@@ -33,7 +33,7 @@ void init()
 	SDL_Init(SDL_INIT_EVERYTHING);
 	TTF_Init();
 
-	font = TTF_OpenFont("arial.ttf", 5);
+	font = TTF_OpenFont("arial.ttf", 30);
 
 	window = SDL_CreateWindow("Bounicng Blocks and PI", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 800, 0);
 	render = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);

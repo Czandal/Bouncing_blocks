@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <algorithm>
+#include <string>
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
