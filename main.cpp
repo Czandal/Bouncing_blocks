@@ -6,7 +6,7 @@ int main(int argc, char*argv[])
 	std::cin >> m1;
 	std::cin >> m2;
 	init();
-	SDL_Rect counter_pos = { 700,25,100,30};
+	SDL_Rect counter_pos = { 700,25,100,50};
 	Block left(150.0, 700.0,m1, m1, 0.0,m1);
 	left.r.y -= left.r.h;
 	Block right(200.0+ left.r.h, 700.0,m2, m2, -10.0,m2);
@@ -37,7 +37,7 @@ int main(int argc, char*argv[])
 					{
 						if ((right.velocity < 0.0 && left.velocity >= 0.0))
 						{
-							double c1 = (double)(right.r.x - left.r.x - left.r.w) / (double)(abs(right.velocity) + abs(left.velocity));
+							double c1 = (right.r.x - left.r.x - left.r.w) / (abs(right.velocity) + abs(left.velocity));
 							if (c1 <= time)
 							{
 								left.move(c1);
@@ -55,7 +55,7 @@ int main(int argc, char*argv[])
 						}
 						else if (left.velocity < 0.0 && right.velocity>=0.0)
 						{
-							double c2 = abs((double)(left.r.x - WALL_X) / (double)left.velocity);
+							double c2 = abs((left.r.x - WALL_X) / left.velocity);
 							if (c2 <= time)
 							{
 								left.move(c2);
@@ -80,9 +80,9 @@ int main(int argc, char*argv[])
 							}
 							else
 							{
-								c1 = (double)(right.r.x - left.r.x - left.r.w) / abs((double)(right.velocity - left.velocity));
+								c1 = (right.r.x - left.r.x - left.r.w) / abs((double)(right.velocity - left.velocity));
 							}
-							double c2 = abs((double)(left.r.x - WALL_X) / (double)left.velocity);
+							double c2 = abs((left.r.x - WALL_X) / left.velocity);
 							if (c1 <= time && c2 <= time && c1 > 0)
 							{
 								if (c1 < c2)
@@ -174,15 +174,6 @@ int main(int argc, char*argv[])
 			{
 				SDL_DestroyTexture(counter_texture);
 			}
-			/*if (font != nullptr)
-			{
-				counter_texture = renderText(std::to_string(counter), 0xff, 0xff, 0xff);
-			}
-			else
-			{
-				font = TTF_OpenFont("arial.ttf", 30);
-				
-			}*/
 			counter_texture = renderText(std::to_string(counter), 0xff, 0xff, 0xff);
 			SDL_RenderCopy(render, counter_texture, nullptr, &counter_pos);
 			SDL_RenderPresent(render);
