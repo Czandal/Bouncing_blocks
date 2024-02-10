@@ -1,0 +1,15 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++20",
+      "-o",
+      "main",
+      "main.cpp"
+    ],
+    "directory": "/home/czandal/CodeShit/cpp/Bouncing_blocks",
+    "file": "/home/czandal/CodeShit/cpp/Bouncing_blocks/main.cpp",
+    "output": "/home/czandal/CodeShit/cpp/Bouncing_blocks/main"
+  }
+]
