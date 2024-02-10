@@ -180,7 +180,7 @@ int main(int argc, char*argv[])
 		}
 		SDL_framerateDelay(&fps);
 	}
-	std::cout <<"Numver of collisions: "<< counter;
+	std::cout <<"Number of collisions: "<< counter;
 	free();
 	return 0;
 }

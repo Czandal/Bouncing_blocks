@@ -2,14 +2,56 @@
   {
     "arguments": [
       "/usr/bin/g++",
-      "-c",
       "-std=c++20",
+      "-c",
       "-o",
-      "main",
+      "main.o",
       "main.cpp"
     ],
     "directory": "/home/czandal/CodeShit/cpp/Bouncing_blocks",
     "file": "/home/czandal/CodeShit/cpp/Bouncing_blocks/main.cpp",
-    "output": "/home/czandal/CodeShit/cpp/Bouncing_blocks/main"
+    "output": "/home/czandal/CodeShit/cpp/Bouncing_blocks/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++20",
+      "-c",
+      "-o",
+      "global.o",
+      "global.cpp"
+    ],
+    "directory": "/home/czandal/CodeShit/cpp/Bouncing_blocks",
+    "file": "/home/czandal/CodeShit/cpp/Bouncing_blocks/global.cpp",
+    "output": "/home/czandal/CodeShit/cpp/Bouncing_blocks/global.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++20",
+      "-c",
+      "-o",
+      "Block.o",
+      "Block.cpp"
+    ],
+    "directory": "/home/czandal/CodeShit/cpp/Bouncing_blocks",
+    "file": "/home/czandal/CodeShit/cpp/Bouncing_blocks/Block.cpp",
+    "output": "/home/czandal/CodeShit/cpp/Bouncing_blocks/Block.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++20",
+      "main.o",
+      "global.o",
+      "Block.o",
+      "-o",
+      "my_project",
+      "SDL2_framerate.c"
+    ],
+    "directory": "/home/czandal/CodeShit/cpp/Bouncing_blocks",
+    "file": "/home/czandal/CodeShit/cpp/Bouncing_blocks/SDL2_framerate.c",
+    "output": "/home/czandal/CodeShit/cpp/Bouncing_blocks/my_project"
   }
 ]
